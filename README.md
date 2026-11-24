@@ -1,5 +1,8 @@
+# Atmosphere360 🌍
+### AI-Powered Air Quality Intelligence & Health Action Platform
+
 <p align="center">
-  <img src="assets/banner.svg" alt="Atmosphere360: Mumbai - Air Quality & Health Action Platform" width="100%">
+  <img src="assets/banner.svg" alt="Atmosphere360 — Mumbai Air Quality & Health Action Platform" width="100%">
 </p>
 
 <p align="center">
@@ -7,263 +10,410 @@
   <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-blue">
   <img alt="Streamlit" src="https://img.shields.io/badge/app-Streamlit-ff4b4b">
   <img alt="Data" src="https://img.shields.io/badge/data-CPCB%20%2B%20Open--Meteo%20%2B%20SerpApi%20%2B%20Groq-1b7f8c">
-  <img alt="Licence" src="https://img.shields.io/badge/licence-MIT-green">
-  <img alt="Hackathon" src="https://img.shields.io/badge/Built%20for-Beyond%209TO5%20Buildathon%20Mumbai%202026-purple">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
+  <img alt="Buildathon" src="https://img.shields.io/badge/Built%20for-Beyond%209TO5%20Buildathon%202026-purple">
 </p>
 
 <p align="center">
-  <a href="https://atmosphere360aweb.streamlit.app/"><b>Live Demo (v1)</b></a> &nbsp;|&nbsp;
-  <a href="#quick-start">Quick Start</a> &nbsp;|&nbsp;
-  <a href="#three-modes">Three Modes</a> &nbsp;|&nbsp;
-  <a href="#architecture">Architecture</a> &nbsp;|&nbsp;
+  <a href="https://atmosphere360aweb.streamlit.app/"><b>🚀 Live Demo (v1)</b></a> |
+  <a href="#-quick-start">Quick Start</a> |
+  <a href="#-platform-overview">Platform Overview</a> |
+  <a href="#-architecture">Architecture</a> |
   <a href="reports/EVALUATION.md">Evaluation Report</a>
 </p>
 
-**Atmosphere360** transforms Mumbai's air quality intelligence into a complete **AI-powered Air Quality & Health Action Platform** serving three audiences through one connected journey:
+---
 
-> **Detect pollution → Understand personal risk → Recommend action → Find suitable products → Monitor improvement**
+## 🌫️ The Problem
 
-Built for **Beyond 9TO5 Buildathon — Mumbai Edition (Nov 22, 2026)** at Paytm, Andheri.
+Air pollution is more than an environmental metric. It is a public-health challenge that affects everyday decisions, institutional preparedness, and urban planning.
+
+Yet, air-quality information is often fragmented across monitoring systems, weather services, public advisories, and local reporting channels.
+
+**Atmosphere360** brings these signals together into an AI-powered air-quality and health-action prototype designed for citizens, municipal authorities, and organisations.
+
+Its central workflow:
+
+**Detect pollution → Understand risk → Recommend action → Find suitable products → Monitor improvement**
+
+Built for **Beyond 9TO5 Buildathon — Mumbai Edition**, held at Paytm, Andheri, on November 22, 2026.
 
 ---
 
-## 🎯 Three Modes, One Intelligence Engine
+## 🎯 Platform Overview
 
-| Mode | Audience | Modules | Value |
-|------|----------|---------|-------|
-| **🏠 Citizen** | Public | My Air, AirCare AI, PurifierMatch, CivicPulse | Free + affiliate revenue |
-| **🏛️ Officer** | BMC/MPCB | Command Center, Expected Alerts, Team Deployment, Complaint Queue | Institutional SaaS |
-| **🏢 Enterprise** | Schools, Hospitals, Offices | AirSense (Indoor IAQ), Building Portfolio | Per-building subscription |
+Atmosphere360 brings three user experiences together through a shared intelligence engine.
 
-All modes share: **CPCB historical (3yr) + Open-Meteo live forecast + SerpApi live data + LightGBM forecasting + Groq LLM**
+| Mode | Intended Audience | Key Modules |
+|---|---|---|
+| 🏠 **Citizen** | General public | My Air, AirCare AI, PurifierMatch, CivicPulse |
+| 🏛️ **Officer** | BMC / MPCB teams | Command Center, Expected Alerts, Team Deployment, Complaint Queue |
+| 🏢 **Enterprise** | Schools, hospitals, offices | AirSense Monitor, Building Portfolio |
+
+### Shared Intelligence Engine
+
+- Historical air-quality data from CPCB.
+- Live weather and forecast information from Open-Meteo.
+- Live search, news, maps, and shopping information through SerpApi.
+- LightGBM-based AQI forecasting.
+- Composite priority scoring.
+- Groq-powered AI recommendations and briefings.
 
 ---
 
-## 🚀 Key Differentiators
+## ✨ Key Features
 
-| Feature | Description |
-|---------|-------------|
-| **PurifierMatch** | CADR calculator (room volume × ACH / 60) → 3 tiered recommendations → side-by-side TCO comparison → live multi-API pricing (SerpApi Shopping + Search) |
-| **AirCare AI Chatbot** | Conversational Groq LLM with live AQI, 48h forecast, news, CPCB bulletins context |
-| **Expected Alerts Engine** | Real-time AQI forecast + wind stagnation + persistence + citizen complaints → auto-generates High Alert/Watch/Advisory |
-| **Team Deployment** | One-click dispatch → track Dispatched→On-Site→Verified → auto-links complaints |
-| **Admin Panel** | 4 tiers (Free/Pro/Enterprise/Officer) with feature flags, rate limits, pricing, revenue analytics |
-| **Live City Pulse** | Sidebar strip: live PM2.5/PM10/AQI vs 3-year baseline deltas, wind dispersion, news |
+| Feature | What it does |
+|---|---|
+| **My Air** | Displays AQI, PM2.5, PM10, historical comparisons, an Air Score, activity guidance, and a 48-hour forecast. |
+| **AirCare AI** | Conversational air-quality assistance using live context, forecasts, news, and CPCB bulletins. |
+| **PurifierMatch** | Calculates required Clean Air Delivery Rate (CADR), compares purifier options, estimates total cost of ownership, and retrieves live prices. |
+| **CivicPulse** | Supports photo- and location-based pollution complaints, AI categorisation, reference IDs, and status tracking. |
+| **Command Center** | Provides hotspot mapping, priority zones, AI-generated briefings, complaint queues, and pollution-source discovery. |
+| **Expected Alerts** | Combines AQI forecasts, wind conditions, persistence, and complaints to generate alert categories. |
+| **Team Deployment** | Supports team dispatch and tracks deployment progress from dispatch to verification. |
+| **Route Planner** | Generates nearest-neighbour inspection routes using Haversine distance calculations. |
+| **AirSense Monitor** | Supports building and room registration, manual indoor PM2.5 readings, I/O ratio visualisation, and reports. |
+| **Building Portfolio** | Provides a cross-building view of indoor air-quality readings and monitoring status. |
+| **Admin Panel** | Provides tier configuration, feature flags, rate limits, revenue analytics, and system metrics. |
 
 ---
 
 ## 🏗️ Architecture
 
+```text
+┌───────────────────────────────────────────────────────────────┐
+│                     ATMOSPHERE360                              │
+├───────────────────┬────────────────────┬──────────────────────┤
+│  CITIZEN          │  OFFICER           │  ENTERPRISE          │
+│                   │                    │                      │
+│  • My Air         │  • Command Center  │  • AirSense Monitor  │
+│  • AirCare AI     │  • Expected Alerts │  • Building Portfolio│
+│  • PurifierMatch  │  • Team Deployment │  • Indoor IAQ        │
+│  • CivicPulse     │  • Complaint Queue │  • Reports           │
+└───────────────────┴────────────────────┴──────────────────────┘
+                           │
+                           ▼
+┌───────────────────────────────────────────────────────────────┐
+│                  SHARED INTELLIGENCE ENGINE                   │
+│                                                               │
+│  • CPCB historical air-quality data                           │
+│  • Open-Meteo weather and forecast data                       │
+│  • LightGBM AQI forecasting                                    │
+│  • Five-criteria priority scoring                             │
+│  • Groq-powered AI recommendations                            │
+└───────────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+┌───────────────────────────────────────────────────────────────┐
+│                       DATA LAYER                              │
+│                                                               │
+│  • SerpApi: Search, Maps, Shopping, News, Extract             │
+│  • Open-Meteo: Forecast and Air Quality APIs                  │
+│  • SQLite: Complaints, teams, deployments, buildings, tiers   │
+└───────────────────────────────────────────────────────────────┘
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Atmosphere360 Platform                       │
-├──────────────────┬────────────────────┬────────────────────────┤
-│   🏠 CITIZEN     │    🏛️ OFFICER      │    🏢 ENTERPRISE       │
-│  • My Air       │  • Command Center  │  • AirSense Monitor    │
-│  • AirCare AI   │  • Expected Alerts │  • Building Portfolio  │
-│  • PurifierMatch│  • Team Deploy     │  • Indoor IAQ + Reports│
-│  • CivicPulse   │  • Complaint Queue │                        │
-└────────┬─────────┴────────┬──────────┴───────────┬────────────┘
-         │                  │                      │
-         └──────────────────┴──────────────────────┘
-                          │
-         ┌────────────────▼────────────────┐
-         │      SHARED INTELLIGENCE        │
-         │  • CPCB 3-yr historical (parquet)│
-         │  • Open-Meteo live forecast     │
-         │  • LightGBM next-day AQI/severity│
-         │  • Priority scoring (5 criteria)│
-         │  • Groq LLM (recommendations)   │
-         └────────────────┬────────────────┘
-                          │
-         ┌────────────────▼────────────────┐
-         │       LIVE DATA LAYER           │
-         │  • SerpApi (5 engines)          │
-         │    - Google Search (alerts)     │
-         │    - Google Maps (sources)      │
-         │    - Google Shopping (prices)   │
-         │    - Google News (bulletins)    │
-         │    - Extract (CPCB live)        │
-         │  • Open-Meteo Forecast + AQ API │
-         │  • SQLite (complaints, teams,   │
-         │    buildings, tiers, revenue)   │
-         └─────────────────────────────────┘
-```
+
+### Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| Application | Python, Streamlit |
+| Machine Learning | LightGBM, Gradient Boosting |
+| AI / LLM | Groq, Llama 3.3 |
+| Data Processing | Pandas, Parquet |
+| Database | SQLite |
+| Weather & Air Quality | Open-Meteo |
+| Historical Air Quality | CPCB CAAQMS |
+| Live Search & Discovery | SerpApi |
+| Testing | Python unittest |
 
 ---
 
-## 📋 Module Overview
+## 📋 Module Details
 
 ### 🏠 Citizen Mode
-| Module | Features |
-|--------|----------|
-| **My Air** | Live AQI/PM2.5/PM10 + 3yr baseline deltas, Air Score (0-100), activity guidance, 48h forecast |
-| **AirCare** | Groq LLM chatbot with live context (forecast, news, CPCB), context selector (home/office/school/outdoors), personalized checklist |
-| **PurifierMatch** | CADR calculator → Budget/Balanced/Premium picks → working side-by-side comparison → TCO (device + filter + energy) → live SerpApi prices |
-| **CivicPulse** | Photo + location complaints → AI categorization → reference ID (CP-YYYYMMDD-XXX) → status tracking (Submitted→Resolved) |
+
+| Module | Capabilities |
+|---|---|
+| **My Air** | Live AQI, PM2.5, PM10, three-year baseline comparisons, Air Score (0–100), activity guidance, and 48-hour forecasts. |
+| **AirCare** | Groq-powered chatbot with forecast, news, and CPCB context; supports home, office, school, and outdoor context selection. |
+| **PurifierMatch** | CADR calculation, Budget/Balanced/Premium recommendations, product comparison, total cost of ownership, and live pricing. |
+| **CivicPulse** | Photo and location-based complaint submission, AI categorisation, reference ID generation, and complaint status tracking. |
 
 ### 🏛️ Officer Mode
-| Module | Features |
-|--------|----------|
-| **Command Center** | City hotspot map, top-5 priority zones, AI daily briefing (Groq), citizen complaint queue, SerpApi pollution source finder |
-| **Expected Alerts** | Auto-generated from: AQI forecast >200, wind <8km/h, 3+ persistence days, 2+ complaints → High Alert / Watch / Advisory |
-| **Team Deployment** | Dispatch teams (BMC Ward A/B, MPCB, Traffic, Fire) → link complaints → track status (Dispatched→On-Site→Verified) |
-| **Route Planner** | Haversine nearest-neighbor tour for top-N zones + stop-by-stop itinerary |
+
+| Module | Capabilities |
+|---|---|
+| **Command Center** | City hotspot map, top-five priority zones, AI daily briefing, citizen complaint queue, and pollution-source discovery. |
+| **Expected Alerts** | Uses AQI forecast, wind speed, persistence, and complaint signals to generate High Alert, Watch, or Advisory categories. |
+| **Team Deployment** | Supports dispatch across BMC Ward A/B, MPCB, Traffic, and Fire teams, with deployment status tracking. |
+| **Route Planner** | Uses Haversine distance and nearest-neighbour routing to create inspection itineraries for priority zones. |
 
 ### 🏢 Enterprise Mode
-| Module | Features |
-|--------|----------|
-| **AirSense Monitor** | Register buildings/rooms → manual indoor PM2.5 entry → I/O ratio charts → WHO guideline overlays → Groq PDF reports |
-| **Building Portfolio** | Cross-building dashboard with avg/max PM2.5, monitoring coverage, action status |
 
-### 🔧 Admin Panel (Owner Only)
-| Feature | Description |
-|---------|-------------|
-| **Tier Config** | Free/Pro/Enterprise/Officer → feature flags, rate limits, pricing |
-| **Revenue Analytics** | 30-day MRR, by-tier/by-metric breakdown, affiliate commission tracking |
-| **System Metrics** | Complaints, deployments, teams, alerts, readings, buildings |
-| **API Status** | SerpApi, Groq, Open-Meteo connectivity check |
+| Module | Capabilities |
+|---|---|
+| **AirSense Monitor** | Building and room registration, manual indoor PM2.5 readings, indoor/outdoor ratio charts, WHO guideline overlays, and Groq-generated PDF reports. |
+| **Building Portfolio** | Aggregated building-level PM2.5 readings, monitoring coverage, and action status. |
+
+### 🔧 Admin Panel
+
+The owner-facing administration interface includes:
+
+- Free, Pro, Enterprise, and Officer tier configuration.
+- Feature flags and rate limits.
+- Pricing and revenue analytics.
+- Affiliate commission tracking.
+- Complaint, deployment, team, alert, and building metrics.
+- API connectivity checks.
 
 ---
 
-## 📊 Data & Models
+## 📊 Data & Machine Learning
 
-| Data | Source | Coverage |
-|------|--------|----------|
-| Historical AQI | CPCB CAAQMS | 597,912 hourly records, 36 stations (30 active), 2021-2023 |
-| Weather | Open-Meteo ERA5 | 26,280 hourly obs, Mumbai coords |
-| Live Forecast | Open-Meteo API | 48h hourly: temp, humidity, wind, PM2.5, PM10, AQI |
-| Live Prices | SerpApi Shopping | Real-time INR prices from Amazon/Flipkart/Croma |
-| Live News | SerpApi News | Pollution bulletins, policy announcements |
-| Pollution Sources | SerpApi Maps | Factories, construction, traffic near stations |
+### Data Sources
 
-**Models:**
-- **LightGBM L1 Residual** — Next-day AQI (MAE 18.83 vs 19.42 persistence on 2023 holdout)
-- **Gradient Boosting Classifier** — Severe day (AQI>200) detection (Recall 0.87, PR-AUC 0.812)
-- **Priority Score** — 5-criteria composite (Exposure 30%, Persistence 25%, Forecast 20%, Trend 15%, Gap 10%)
+| Dataset | Source | Coverage |
+|---|---|---|
+| Historical AQI | CPCB CAAQMS | 597,912 hourly records, 36 stations (30 active), 2021–2023 |
+| Historical Weather | Open-Meteo ERA5 | 26,280 hourly observations, Mumbai coordinates |
+| Live Forecast | Open-Meteo API | 48-hour hourly forecast, including temperature, humidity, wind, PM2.5, PM10, and AQI |
+| Live Product Prices | SerpApi Shopping | INR pricing from supported shopping sources |
+| Live News | SerpApi News | Pollution bulletins and policy announcements |
+| Pollution Sources | SerpApi Maps | Nearby factories, construction, and traffic-related locations |
+
+### Models & Evaluation
+
+| Component | Approach | Reported Result |
+|---|---|---|
+| Next-day AQI Forecast | LightGBM L1 Residual | MAE: 18.83 vs 19.42 persistence baseline |
+| Severe-day Detection | Gradient Boosting Classifier | Recall: 0.870, PR-AUC: 0.812 |
+| Priority Scoring | Five-criteria composite | Exposure, persistence, forecast, trend, and monitoring gap |
+| Prediction Intervals | 80% prediction intervals | 73.8% empirical coverage |
+| Inspection Prioritisation | Weekly inspection backtest | 43% hit-rate lift over random selection |
+
+### Priority Score
+
+The composite score combines five criteria:
+
+| Criterion | Weight |
+|---|---:|
+| Exposure | 30% |
+| Persistence | 25% |
+| Forecast | 20% |
+| Trend | 15% |
+| Monitoring Gap | 10% |
+
+**Evaluation note:** The reported 2023 holdout results are exploratory because the holdout was viewed during development. They should not be interpreted as results from a fully independent, untouched test set. See the [Evaluation Report](reports/EVALUATION.md) for methodology and details.
 
 ---
 
 ## ⚡ Quick Start
 
+### Prerequisites
+
+- Python 3.10 or later.
+- Git.
+- SerpApi API key.
+- Groq API key.
+
+### 1. Clone the repository
+
 ```bash
-# 1. Clone and enter
 git clone https://github.com/RatneshPathak/atmosphere360-2.0.git
 cd atmosphere360-2.0
-
-# 2. Configure API keys
-cp .env.example .env
-# Edit .env with:
-# SERPAPI_KEY=your_serpapi_key    # Get 500 free credits: serpapi.com/beyond9to5mumbai500
-# GROQ_API_KEY=your_groq_key      # Free: console.groq.com/keys
-
-# 3. Install & run
-python -m venv venv
-source venv/bin/activate          # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run app.py              # Opens at http://localhost:8501
 ```
 
-### Access Admin Panel
-1. Mode selector (sidebar) → **🔧 Admin — Owner Panel**
-2. Password: `atmosphere3602026` (change in production!)
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+```bash
+# Windows
+venv\Scripts\activate
+
+# macOS / Linux
+source venv/bin/activate
+```
+
+### 3. Configure API keys
+
+Create your environment file:
+
+```bash
+cp .env.example .env
+```
+
+Add your API credentials:
+
+```env
+SERPAPI_KEY=your_serpapi_key
+GROQ_API_KEY=your_groq_api_key
+```
+
+Get API credentials:
+
+- [SerpApi](https://serpapi.com/)
+- [Groq Console](https://console.groq.com/keys)
+
+**Security:** Never commit `.env` or expose API keys, administrator passwords, or other secrets in source code or public documentation.
+
+### 4. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Run the application
+
+```bash
+streamlit run app.py
+```
+
+Open the application at:
+
+```text
+http://localhost:8501
+```
+
+### Admin Access
+
+Select **Admin — Owner Panel** from the application mode selector.
+
+Configure the administrator password securely through the application's supported environment or secrets configuration. Do not use a publicly documented default password.
 
 ---
 
 ## 🧪 Testing & Evaluation
 
-```bash
-# Run 40 unit/integration tests
-python -m unittest discover tests
+Run the unit and integration test suite:
 
-# Full evaluation (reproduces all metrics)
+```bash
+python -m unittest discover tests
+```
+
+Run the full evaluation:
+
+```bash
 pip install -r requirements-dev.txt
 python Evaluate.py --full
+```
 
-# Quick evaluation (~35s)
+Run the quicker evaluation:
+
+```bash
 python Evaluate.py --quick
 ```
 
-**Key Results (2023 Holdout):**
-- Next-day AQI MAE: **18.83** (vs 19.42 persistence)
-- Severe day Recall: **0.870**, PR-AUC: **0.812**
-- Weekly inspection backtest: **+43% hit-rate lift** over random
-- 80% prediction intervals: **73.8%** empirical coverage
+The repository includes 40 unit and integration tests, alongside evaluation scripts for reproducing reported model metrics.
+
+For additional methodology and results, see [`reports/EVALUATION.md`](reports/EVALUATION.md).
 
 ---
 
 ## 📁 Repository Structure
 
-```
+```text
 atmosphere360-2.0/
-├── app.py                      # Main Streamlit app (3-mode router)
-├── config.py                   # Constants, tiers, API key helpers
-├── requirements.txt            # Runtime deps
-├── requirements-dev.txt        # Training/eval deps (LightGBM, etc.)
-├── .env.example                # API key template
-├── serpapi_client.py           # SerpApi wrapper (5 engines)
+│
+├── app.py
+├── config.py
+├── serpapi_client.py
+├── requirements.txt
+├── requirements-dev.txt
+├── .env.example
+│
 ├── data/
-│   ├── raw/                    # CPCB telemetry + Open-Meteo weather
-│   └── processed/              # Parquets, precomputed predictions
+│   ├── raw/
+│   └── processed/
+│
 ├── src/
 │   ├── ingest/
-│   │   └── live_feed.py        # Open-Meteo + SerpApi + 3yr baseline
+│   │   └── live_feed.py
 │   ├── llm/
-│   │   └── groq_client.py      # Groq LLM (recommendations, briefings)
+│   │   └── groq_client.py
 │   ├── utils/
-│   │   └── cadr_calculator.py  # CADR = Volume × ACH / 60
+│   │   └── cadr_calculator.py
 │   ├── data/
-│   │   └── sqlite_store.py     # Complaints, teams, deployments, tiers, revenue
+│   │   └── sqlite_store.py
 │   ├── citizen/
-│   │   ├── my_air.py           # Personal AQI + live deltas
-│   │   ├── aircare.py          # AI chatbot (imports my_air)
-│   │   └── purifier_match.py   # CADR recs + comparison + live prices
+│   │   ├── my_air.py
+│   │   ├── aircare.py
+│   │   └── purifier_match.py
 │   ├── officer/
-│   │   ├── civic_pulse.py      # Complaint reporting + queue
-│   │   └── command_center.py   # Alerts + team deployment
+│   │   ├── civic_pulse.py
+│   │   └── command_center.py
 │   ├── enterprise/
-│   │   └── airsense.py         # Indoor IAQ + reports
+│   │   └── airsense.py
 │   └── admin/
-│       └── admin_panel.py      # Tier config, revenue, metrics
-├── tests/                      # 40 unit/integration tests
-└── reports/                    # Generated eval reports, figures
+│       └── admin_panel.py
+│
+├── tests/
+├── reports/
+├── assets/
+└── LICENSE
 ```
 
 ---
 
-## 🔐 Responsible Use
+## 🔐 Responsible Use & Limitations
 
-> **Atmosphere360 is a prototype screening/triage tool.** It is **not** an official warning system and does not replace CPCB/MPCB monitoring. All AI recommendations require **human-in-the-loop verification**. Synthetic data is clearly labeled. Outdoor AQI ≠ indoor air quality.
+> **Atmosphere360 is a prototype screening and triage tool. It is not an official pollution-warning system and does not replace CPCB/MPCB monitoring or professional health advice. AI-generated recommendations require human verification.**
 
-**Limitations:**
-- Strong autoregression (yesterday's AQI is hard baseline)
-- Uneven station coverage (clusters near highways/industry)
-- Point measurements ≠ whole ward exposure
-- 2023 holdout viewed during development
+### Current Limitations
+
+- Strong autoregressive behaviour: yesterday's AQI is a challenging baseline.
+- Uneven monitoring-station distribution, with clusters near highways and industrial areas.
+- Point measurements do not represent the exposure of an entire ward.
+- The 2023 holdout was viewed during development, limiting claims of independent generalisation.
+- Outdoor AQI does not directly represent indoor air quality.
+- Indoor PM2.5 monitoring currently relies on manually entered readings.
+
+Synthetic data, where used, should be treated as illustrative rather than observed measurements.
 
 ---
 
-## 📜 Licence & Credits
+## 📜 Data Sources, Licences & Credits
 
-| Component | Source | Licence |
-|-----------|--------|---------|
+| Component | Source | Licence / Terms |
+|---|---|---|
 | Air Quality | CPCB / MPCB CAAQMS | Government Open Data (NDSAP) |
-| Weather | Open-Meteo (ERA5) | CC BY 4.0 |
-| Spatial | OpenStreetMap | ODbL |
-| Live Search/Shopping/News | SerpApi | SerpApi Terms |
-| LLM | Groq (Llama 3.3) | Groq Terms |
+| Weather | Open-Meteo ERA5 | CC BY 4.0 |
+| Spatial Data | OpenStreetMap | ODbL |
+| Live Search, Shopping & News | SerpApi | SerpApi Terms |
+| LLM | Groq / Llama 3.3 | Applicable provider and model terms |
 
-**Built by Ratnesh Pathak** for **Beyond 9TO5 Buildathon — Mumbai Edition** (Nov 22, 2026)
-
-Released under **MIT License** — see [`LICENSE`](LICENSE)
+Please review the respective provider terms before using or redistributing source data.
 
 ---
+
+## 👨‍💻 Author
+
+**Ratnesh Pathak**
+
+Built for **Beyond 9TO5 Buildathon — Mumbai Edition (2026)**.
+
+- GitHub: [@RatneshPathak](https://github.com/RatneshPathak)
+- Project Repository: [Atmosphere360](https://github.com/RatneshPathak/atmosphere360-2.0)
+- Live Demo: [Atmosphere360 v1](https://atmosphere360aweb.streamlit.app/)
+
+---
+
+## 📄 Licence
+
+Released under the MIT License. See [`LICENSE`](LICENSE) for details.
 
 <p align="center">
   <img src="assets/banner.svg" alt="Atmosphere360" width="60%">
 </p>
 
 <p align="center">
-  <b>One platform. Three modes. One connected journey.</b><br>
+  <b>One platform. Three modes. One connected journey.</b>
+  <br>
   Detect → Understand → Act → Equip → Monitor
 </p>
